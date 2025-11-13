@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Khuyến mãi - Breezy Admin</title>
+  <link rel="stylesheet" href="promotions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">💧</div>
+        <div class="brand-info">
+          <div class="brand-name">Breezy</div>
+          <div class="brand-subtitle">Admin Dashboard</div>
+        </div>
+      </div>
+      
+      <ul class="menu">
+        <li><a href="#" class="menu-item"><i class="fas fa-chart-line"></i> Tổng quan</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-utensils"></i> Quản lý menu</a></li>
+        <li><a href="notifications.html" class="menu-item"><i class="fas fa-bell"></i> Nội dung & Thông báo</a></li>
+        <li><a href="#" class="menu-item active"><i class="fas fa-gift"></i> Khuyến mãi & Voucher</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-chart-bar"></i> Thống kê & Báo cáo</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-video"></i> Quản lý Video</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-users"></i> Chỉ nhắm</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-user-friends"></i> Người dùng</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-cog"></i> Cài đặt</a></li>
+      </ul>
+      
+      <div class="user">
+        <div class="user-avatar">AN</div>
+        <div class="user-info">
+          <p class="name">Admin Nguyen</p>
+          <p class="role">Quản trị viên</p>
+        </div>
+        <i class="fas fa-sign-out-alt logout-icon"></i>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <h1>Khuyến mãi & Voucher</h1>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Tìm kiếm đồ uống">
+          </div>
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge">1</span>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar-small">AN</div>
+            <span>Admin</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <div class="page-title">
+          <h2>Quản lý Khuyến mãi</h2>
+        </div>
+        <div class="header-actions">
+          <button class="btn-secondary"><i class="fas fa-ticket-alt"></i> Tạo mã voucher</button>
+          <button class="btn-primary"><i class="fas fa-plus"></i> Tạo chương trình mới</button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="programs">Chương trình KM</button>
+        <button class="tab-btn" data-tab="vouchers">Mã Voucher</button>
+        <button class="tab-btn" data-tab="history">Lịch sử sử dụng</button>
+        <button class="tab-btn" data-tab="requests">Yêu cầu duyệt</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <div class="filter-group">
+          <label>Trạng thái</label>
+          <select class="filter-select">
+            <option>Đang chạy</option>
+            <option>Chờ duyệt</option>
+            <option>Đã kết thúc</option>
+            <option>Tất cả</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Loại khuyến mãi</label>
+          <select class="filter-select">
+            <option>Tất cả</option>
+            <option>Giảm giá %</option>
+            <option>Giảm giá cố định</option>
+            <option>Mua 1 tặng 1</option>
+            <option>Freeship</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Thời gian</label>
+          <input type="date" class="filter-date" value="2024-01-01">
+          <span>-</span>
+          <input type="date" class="filter-date" value="2024-01-31">
+        </div>
+        <div class="filter-stats">
+          <i class="fas fa-chart-line"></i>
+          <span>8 chương trình đang hoạt động</span>
+        </div>
+      </div>
+
+      <!-- Promotions Grid -->
+      <div class="promotions-grid">
+        <!-- Card 1 -->
+        <div class="promo-card running">
+          <div class="card-header">
+            <div class="promo-icon fire">🔥</div>
+            <span class="status-badge green">Đang chạy</span>
+          </div>
+          <h3 class="promo-title">Flash Sale Cuối Tuần - Giảm 50%</h3>
+          <p class="promo-desc">Giảm 50% tất cả đồ uống từ Thứ 7 đến Chủ Nhật. Áp dụng toàn hệ thống cho mọi khách hàng.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>15-17/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-percentage"></i>
+              <span>Giảm 50%</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>1,234/10,000</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>Doanh thu: 45tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 12.3%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Đã sử dụng</span>
+            <span class="progress-percent">12.3%</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn warning"><i class="fas fa-pause"></i> Tạm dừng</button>
+            <button class="action-btn info"><i class="fas fa-chart-bar"></i> Xem báo cáo</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="promo-card running">
+          <div class="card-header">
+            <div class="promo-icon ship">🚚</div>
+            <span class="status-badge green">Đang chạy</span>
+          </div>
+          <h3 class="promo-title">Miễn phí ship đơn 150k+</h3>
+          <p class="promo-desc">Giao hàng miễn phí cho tất cả đơn hàng từ 150,000đ trở lên trong bán kính 5km.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>01-31/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-shipping-fast"></i>
+              <span>Free ship</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>8,921/∞</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>Chi phí: 22.3tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar infinite">
+            <div class="progress-fill" style="width: 100%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Không giới hạn</span>
+            <span class="progress-percent">∞</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn warning"><i class="fas fa-pause"></i> Tạm dừng</button>
+            <button class="action-btn info"><i class="fas fa-chart-bar"></i> Xem báo cáo</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="promo-card running">
+          <div class="card-header">
+            <div class="promo-icon gift">🎁</div>
+            <span class="status-badge green">Đang chạy</span>
+          </div>
+          <h3 class="promo-title">Mua 2 Tặng 1</h3>
+          <p class="promo-desc">Mua 2 đồ uống bất kỳ, tặng 1 đồ uống có giá trị thấp nhất. Áp dụng size M.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>10-20/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-gift"></i>
+              <span>Quà tặng</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>456/2,000</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>Doanh thu: 28tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 22.8%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Đã sử dụng</span>
+            <span class="progress-percent">22.8%</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn warning"><i class="fas fa-pause"></i> Tạm dừng</button>
+            <button class="action-btn info"><i class="fas fa-chart-bar"></i> Xem báo cáo</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="promo-card pending">
+          <div class="card-header">
+            <div class="promo-icon member">💳</div>
+            <span class="status-badge yellow">Chờ duyệt</span>
+          </div>
+          <h3 class="promo-title">Giảm 30k cho thành viên mới</h3>
+          <p class="promo-desc">Chào mừng thành viên mới với voucher giảm 30,000đ cho đơn hàng đầu tiên từ 100k.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>01-31/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-tag"></i>
+              <span>Giảm 30,000đ</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>0/5,000</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-user-plus"></i>
+              <span>Ngân sách: 150tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Chưa triển khai</span>
+            <span class="progress-percent">0%</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn success"><i class="fas fa-check"></i> Chỉ tiết duyệt</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="promo-card running">
+          <div class="card-header">
+            <div class="promo-icon combo">🍱</div>
+            <span class="status-badge green">Đang chạy</span>
+          </div>
+          <h3 class="promo-title">Combo Tiết Kiệm</h3>
+          <p class="promo-desc">Combo 2 Trà + 1 Bánh chỉ 89,000đ. Tiết kiệm đến 30% so với giá lẻ.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>05-25/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-utensils"></i>
+              <span>Combo meal</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>3,456/5,000</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>Doanh thu: 34.2tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 69.1%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Đã sử dụng</span>
+            <span class="progress-percent">69.1%</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn warning"><i class="fas fa-pause"></i> Tạm dừng</button>
+            <button class="action-btn info"><i class="fas fa-chart-bar"></i> Xem báo cáo</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="promo-card running">
+          <div class="card-header">
+            <div class="promo-icon cake">🎂</div>
+            <span class="status-badge green">Đang chạy</span>
+          </div>
+          <h3 class="promo-title">Tặng bánh khi mua đồ uống</h3>
+          <p class="promo-desc">Mua 1 đồ uống từ 50k tặng ngay 1 bánh ngọt. Số lượng có hạn.</p>
+          
+          <div class="promo-meta">
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>12-18/01/2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-birthday-cake"></i>
+              <span>Quà tặng</span>
+            </div>
+          </div>
+          
+          <div class="promo-stats">
+            <div class="stat-item">
+              <i class="fas fa-receipt"></i>
+              <span>9877/10,000</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>Chi phí: 24tr</span>
+            </div>
+          </div>
+          
+          <div class="progress-bar warning">
+            <div class="progress-fill" style="width: 98.7%"></div>
+          </div>
+          <div class="progress-label">
+            <span>Sắp hết</span>
+            <span class="progress-percent">98.7%</span>
+          </div>
+          
+          <div class="card-actions">
+            <button class="action-btn edit"><i class="fas fa-edit"></i> Sửa</button>
+            <button class="action-btn warning"><i class="fas fa-pause"></i> Tạm dừng</button>
+            <button class="action-btn info"><i class="fas fa-chart-bar"></i> Xem báo cáo</button>
+            <button class="action-btn more"><i class="fas fa-ellipsis-v"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">...</button>
+        <button class="page-btn">8</button>
+        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <footer>© 2024 Breezy Admin Dashboard. Tất cả quyền được bảo lưu.</footer>
+    </main>
+  </div>
+  <!-- Modal Tạo Chương Trình Khuyến Mãi -->
+  <div id="createPromoModal" class="promo-modal">
+    <div class="promo-modal-content">
+      <div class="promo-modal-header">
+        <h2 id="modalTitle">Tạo chương trình khuyến mãi</h2>
+        <button class="promo-modal-close">&times;</button>
+      </div>
+      
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step active" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-label">Thông tin cơ bản</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-label">Thời gian & Ngân sách</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-label">Đối tượng & Phê duyệt</div>
+        </div>
+      </div>
+
+      <div class="promo-modal-body">
+        <!-- Step 1: Thông tin cơ bản -->
+        <div class="step-content active" data-step="1">
+          <h3>Thông tin cơ bản</h3>
+          
+          <div class="form-group">
+            <label>Tên chương trình <span class="required">*</span></label>
+            <input type="text" id="promoName" placeholder="VD: Flash Sale Cuối Tuần" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label>Mô tả</label>
+            <textarea id="promoDesc" rows="3" placeholder="Mô tả chi tiết về chương trình khuyến mãi..." class="form-textarea"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Loại khuyến mãi <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="promoType" value="percent" checked>
+                <span>Giảm %</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="promoType" value="fixed">
+                <span>Giảm tiền</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="promoType" value="freeship">
+                <span>Free ship</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="promoType" value="gift">
+                <span>Quà tặng</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="promoType" value="combo">
+                <span>Combo deal</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phần trăm giảm <span class="required">*</span></label>
+              <div class="input-with-suffix">
+                <input type="number" id="discountPercent" value="50" min="0" max="100" class="form-input">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Giảm tối đa</label>
+              <input type="text" id="maxDiscount" placeholder="100,000đ" class="form-input">
+            </div>
+          </div>
+
+          <h3 style="margin-top: 32px;">Điều kiện áp dụng</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Giá trị đơn hàng tối thiểu</label>
+              <input type="text" id="minOrder" placeholder="100,000đ" class="form-input">
+              <small class="form-hint">Để trống nếu không giới hạn</small>
+            </div>
+            <div class="form-group">
+              <label>Chi nhánh áp dụng</label>
+              <select id="branches" class="form-select">
+                <option>Tất cả chi nhánh</option>
+                <option>Chi nhánh Q1</option>
+                <option>Chi nhánh Q7</option>
+                <option>Chi nhánh Thủ Đức</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Áp dụng cho</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" checked>
+                <span>Tất cả sản phẩm</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox">
+                <span>Danh mục cụ thể</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox">
+                <span>Sản phẩm cụ thể</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Kênh áp dụng</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" checked>
+                <span>App</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" checked>
+                <span>Website</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" checked>
+                <span>Tại quầy</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" checked>
+                <span>Giao hàng</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Thời gian & Ngân sách -->
+        <div class="step-content" data-step="2">
+          <h3>Thời gian</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Từ ngày <span class="required">*</span></label>
+              <input type="date" id="startDate" value="2024-01-15" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Đến ngày <span class="required">*</span></label>
+              <input type="date" id="endDate" value="2024-01-31" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Từ giờ</label>
+              <input type="time" id="startTime" value="12:00" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Đến giờ</label>
+              <input type="time" id="endTime" value="23:59" class="form-input">
+            </div>
+          </div>
+
+          <h3 style="margin-top: 32px;">Giới hạn sử dụng</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Số lượng phiếu</label>
+              <input type="number" id="totalVouchers" value="10000" class="form-input">
+            </div>
+            <div class="form-group">
+              <label>Giới hạn mỗi người</label>
+              <input type="number" id="limitPerUser" value="1" class="form-input">
+              <small class="form-hint">Số lần sử dụng tối đa/người</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="unlimitedBudget">
+              <span>Không giới hạn</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label>Tổng ngân sách (tùy chọn)</label>
+            <input type="text" id="totalBudget" placeholder="50,000,000đ" class="form-input">
+          </div>
+        </div>
+
+        <!-- Step 3: Đối tượng & Phê duyệt -->
+        <div class="step-content" data-step="3">
+          <h3>Đối tượng</h3>
+
+          <div class="form-group">
+            <label>Áp dụng cho</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="targetAudience" value="all" checked>
+                <span>Tất cả khách hàng</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="targetAudience" value="loyal">
+                <span>Khách hàng thân thiết</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="targetAudience" value="new">
+                <span>Khách hàng mới</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="targetAudience" value="custom">
+                <span>Phân khúc tùy chỉnh</span>
+              </label>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 32px;">Marketing</h3>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Banner quảng cáo (1200x400px)</label>
+              <div class="upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Kéo thả hoặc nhấp để tải ảnh lên</p>
+                <small>Kích thước khuyến nghị: 1200x400px, tối đa 2MB</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Icon khuyến mãi (200x200px)</label>
+              <div class="upload-area">
+                <i class="fas fa-image"></i>
+                <p>Tải icon lên</p>
+                <small>200x200px, PNG với nền trong suốt</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nội dung notification</label>
+            <textarea id="notificationContent" rows="3" placeholder="🔥 Flash Sale Cuối Tuần! Giảm ngay 50% tất cả đồ uống. Nhanh tay đặt hàng!" class="form-textarea"></textarea>
+          </div>
+
+          <h3 style="margin-top: 32px;">Phê duyệt</h3>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="requireApproval">
+              <span>Gửi yêu cầu phê duyệt</span>
+            </label>
+            <small class="form-hint">Quy trình: Chỉ nhánh → Khu vực → Tổng công ty</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Người duyệt</label>
+              <select id="approver" class="form-select">
+                <option>Chọn người duyệt</option>
+                <option>Quản lý chi nhánh</option>
+                <option>Giám đốc khu vực</option>
+                <option>Tổng giám đốc</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ghi chú</label>
+              <input type="text" id="approvalNote" placeholder="Ghi chú cho người duyệt..." class="form-input">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="promo-modal-footer">
+        <button class="btn-cancel" id="cancelPromoBtn">Hủy</button>
+        <button class="btn-save" id="saveDraftBtn">Lưu nháp</button>
+        <button class="btn-next" id="nextStepBtn">Tiếp tục</button>
+        <button class="btn-submit" id="submitPromoBtn" style="display: none;">Tạo và chạy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="promotions.js"></script>
+</body>
+</html>

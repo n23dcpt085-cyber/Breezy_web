@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breezy Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">💧</div>
+        <div class="brand-info">
+          <div class="brand-name">Breezy</div>
+          <div class="brand-subtitle">Admin Dashboard</div>
+        </div>
+      </div>
+      
+      <ul class="menu">
+        <li><a href="#" class="menu-item"><i class="fas fa-chart-line"></i> Tổng quan</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-utensils"></i> Quản lý menu</a></li>
+        <li><a href="#" class="menu-item active"><i class="fas fa-bell"></i> Nội dung & Thông báo</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-gift"></i> Khuyến mãi & Voucher</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-chart-bar"></i> Thống kê & Báo cáo</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-video"></i> Quản lý Video</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-users"></i> Chỉ nhánh</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-user-friends"></i> Người dùng</a></li>
+        <li><a href="#" class="menu-item"><i class="fas fa-cog"></i> Cài đặt</a></li>
+      </ul>
+      
+      <div class="user">
+        <div class="user-avatar">AN</div>
+        <div class="user-info">
+          <p class="name">Admin Nguyen</p>
+          <p class="role">Quản trị viên</p>
+        </div>
+        <i class="fas fa-sign-out-alt logout-icon"></i>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <h1>Nội dung & Thông báo</h1>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Tìm kiếm đồ uống">
+          </div>
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge">1</span>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar-small">AN</div>
+            <span>Admin</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <div class="page-title">
+          <h2>Quản lý Nội dung & Thông báo</h2>
+          <p class="subtitle">Gửi thông báo và quản lý nội dung marketing</p>
+        </div>
+        <button class="create-btn"><i class="fas fa-plus"></i> Tạo thông báo mới</button>
+      </div>
+
+      <div class="content">
+        <!-- Left list -->
+        <section class="notification-list">
+          <div class="list-header">
+            <h3>Danh sách thông báo</h3>
+            <select class="filter-select">
+              <option>Tất cả</option>
+              <option>Đã gửi</option>
+              <option>Nháp</option>
+              <option>Đã lên lịch</option>
+            </select>
+          </div>
+
+          <!-- Notification Card 1 -->
+          <div class="notification-card scheduled">
+            <div class="card-header">
+              <span class="status-badge yellow">Đã lên lịch</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-bolt"></i> Flash Sale 50% - Chỉ 2 giờ!</h4>
+            <p class="card-description">Đừng bỏ lỡ! Flash Sale cực sốc giảm đến 50% cho tất cả các món ăn uống. Áp dụng từ 16:00 - 18:00 hôm nay...</p>
+            <div class="card-meta">
+              <span><i class="far fa-user"></i> Tất cả người dùng</span>
+              <span>• 12,450 người</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">16:00, 16/01/2024</span>
+            </div>
+          </div>
+
+          <!-- Notification Card 2 -->
+          <div class="notification-card sent">
+            <div class="card-header">
+              <span class="status-badge green">Đã gửi</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-leaf"></i> Món mới: Butterfly Pea Lemonade 🧋</h4>
+            <p class="card-description">Thử ngay món đồ uống mới siêu hot - Trà hoa đậu biếc chanh đôi miệu kỳ diệu. Chỉ có tại Breezy!</p>
+            <div class="card-stats">
+              <span><i class="fas fa-paper-plane"></i> Đã gửi: 15,230</span>
+              <span><i class="fas fa-eye"></i> Đã xem: 8,421 (55.2%)</span>
+              <span><i class="fas fa-mouse-pointer"></i> Click: 1,234 (14.7%)</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">14:30, 15/01/2024</span>
+            </div>
+          </div>
+
+          <!-- Notification Card 3 -->
+          <div class="notification-card sent">
+            <div class="card-header">
+              <span class="status-badge green">Đã gửi</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-sun"></i> Chào buổi sáng! Giảm 20% cà phê</h4>
+            <p class="card-description">Bắt đầu ngày mới vớt xá cà phê thơm ngon. Giảm 20% tất cả các loại cà phê từ 7:00 - 11:00.</p>
+            <div class="card-stats">
+              <span><i class="fas fa-paper-plane"></i> Đã gửi: 8,920</span>
+              <span><i class="fas fa-eye"></i> Đã xem: 5,234 (58.7%)</span>
+              <span><i class="fas fa-mouse-pointer"></i> Click: 892 (17.0%)</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">10:00, 15/01/2024</span>
+            </div>
+          </div>
+
+          <!-- Notification Card 4 -->
+          <div class="notification-card draft">
+            <div class="card-header">
+              <span class="status-badge gray">Nháp</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-gift"></i> Tích điểm nhận quà tặng</h4>
+            <p class="card-description">Tích đủ 500 điểm nhận ngay voucher 50k. Mua nhiều tích nhiều, quà liền tay!</p>
+            <div class="card-meta">
+              <span><i class="far fa-user"></i> Khách hàng thân thiết</span>
+              <span>• 3,280 người</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">Chỉnh sửa 2h trước</span>
+            </div>
+          </div>
+
+          <!-- Notification Card 5 -->
+          <div class="notification-card sent">
+            <div class="card-header">
+              <span class="status-badge green">Đã gửi</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-store"></i> Cửa hàng mới tại Quận 7</h4>
+            <p class="card-description">Breezy mở cửa hàng mới tại Phú Mỹ Hưng, Quận 7, ghé thăm và nhận ngay ưu đãi 30% cho đơn đầu tiên!</p>
+            <div class="card-stats">
+              <span><i class="fas fa-paper-plane"></i> Đã gửi: 6,450</span>
+              <span><i class="fas fa-eye"></i> Đã xem: 3,890 (60.3%)</span>
+              <span><i class="fas fa-mouse-pointer"></i> Click: (26.9%)</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">08:50, 14/01/2024</span>
+            </div>
+          </div>
+
+          <!-- Notification Card 6 -->
+          <div class="notification-card failed">
+            <div class="card-header">
+              <span class="status-badge red">Thất bại</span>
+              <div class="card-actions">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <h4><i class="fas fa-cocktail"></i> Happy Hour - Giảm 30% sau 8PM</h4>
+            <p class="card-description">Đêm muộn giảm sầu! Tất cả các món giảm 30% từ 20:00 - 22:00 mỗi ngày.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-exclamation-triangle"></i> Lỗi: Token không hợp lệ</span>
+            </div>
+            <div class="card-footer">
+              <span class="time">20:00, 13/01/2024</span>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">...</button>
+            <button class="page-btn">8</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </section>
+
+        <!-- Right panel -->
+        <aside class="quick-panel">
+          <h3><i class="fas fa-paper-plane"></i> Gửi nhanh</h3>
+          <p class="panel-subtitle">Tạo và gửi thông báo ngay</p>
+          
+          <label>Tiêu đề</label>
+          <input type="text" placeholder="Nhập tiêu đề thông báo">
+          
+          <label>Nội dung</label>
+          <textarea rows="4" placeholder="Nhập nội dung thông báo"></textarea>
+          
+          <label>Đối tượng</label>
+          <select>
+            <option>Tất cả người dùng</option>
+            <option>Người dùng mới</option>
+            <option>Khách hàng thân thiết</option>
+            <option>Khách VIP</option>
+          </select>
+          
+          <button class="send-btn"><i class="fas fa-paper-plane"></i> Gửi ngay</button>
+
+          <div class="templates-section">
+            <h4><i class="fas fa-clipboard-list"></i> Templates nhanh</h4>
+            <ul class="templates">
+              <li>
+                <i class="fas fa-coffee" style="color: #16a34a;"></i>
+                <span>Chào buổi sáng</span>
+                <button class="use-btn">Sử dụng</button>
+              </li>
+              <li>
+                <i class="fas fa-tag" style="color: #ea580c;"></i>
+                <span>Khuyến mãi đặc biệt</span>
+                <button class="use-btn">Sử dụng</button>
+              </li>
+              <li>
+                <i class="fas fa-star" style="color: #eab308;"></i>
+                <span>Yêu cầu đánh giá</span>
+                <button class="use-btn">Sử dụng</button>
+              </li>
+              <li>
+                <i class="fas fa-store" style="color: #06b6d4;"></i>
+                <span>Cửa hàng mới</span>
+                <button class="use-btn">Sử dụng</button>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      
+      <footer>© 2024 Breezy Admin Dashboard. Tất cả quyền được bảo lưu.</footer>
+    </main>
+  </div>
+  <!-- Modal Tạo thông báo mới -->
+  <div id="createNotificationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Tạo thông báo mới</h2>
+        <span class="step-indicator">Bước 1/3</span>
+        <button class="modal-close">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="preview-section">
+          <h3>Xem trước</h3>
+          <div class="phone-preview">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="notification-preview">
+                <div class="app-icon">B</div>
+                <div class="preview-content">
+                  <div class="preview-title" id="previewTitle">🎉 🍹 ⭐ 🔥 👍</div>
+                  <div class="preview-text" id="previewText">Nội dung thông báo sẽ hiển thị ở đây...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-group">
+            <label>Tiêu đề thông báo</label>
+            <div class="input-with-counter">
+              <input type="text" id="notificationTitle" placeholder="Nhập tiêu đề..." maxlength="65">
+              <span class="char-counter"><span id="titleCount">0</span>/65</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nội dung</label>
+            <div class="textarea-with-tools">
+              <textarea id="notificationContent" placeholder="Tối đa 240 ký tự" maxlength="240"></textarea>
+              <div class="textarea-footer">
+                <div class="emoji-section">
+                  <button class="icon-btn" id="copyBtn" title="Copy">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                  <button class="icon-btn" id="imageBtn" title="Hình ảnh">
+                    <i class="fas fa-image"></i>
+                  </button>
+                </div>
+                <span class="char-counter"><span id="contentCount">0</span>/240</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Emoji</label>
+            <div class="emoji-picker">
+              <button class="emoji-btn">🎉</button>
+              <button class="emoji-btn">☕</button>
+              <button class="emoji-btn">🍹</button>
+              <button class="emoji-btn">👍</button>
+              <button class="emoji-btn">🔥</button>
+              <button class="emoji-btn">⭐</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Hình ảnh (Tùy chọn)</label>
+            <div class="image-upload">
+              <div class="upload-placeholder">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Kéo thả hoặc click để tải ảnh lên</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" id="cancelBtn">Hủy</button>
+        <button class="btn-primary" id="nextStepBtn">Tiếp tục →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

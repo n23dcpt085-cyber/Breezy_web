@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo thông báo mới</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Tạo thông báo mới</h2>
+    <label>Tiêu đề</label>
+    <input type="text" id="title" placeholder="Nhập tiêu đề thông báo">
+    <label>Nội dung</label>
+    <textarea id="content" placeholder="Nhập nội dung..."></textarea>
+    <label>Đối tượng</label>
+    <select id="audience">
+      <option>Tất cả người dùng</option>
+      <option>Người dùng mới</option>
+    </select>
+    <button onclick="sendNotification()">Gửi ngay</button>
+    <button onclick="window.location.href='notifications.html'">Quay lại</button>
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
